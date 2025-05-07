@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+ 
+    --radius: 0.5rem;
+
+    --font-size-base: 16px;
+  }
+
+  .text-small {
+    --font-size-base: 14px;
+    font-size: var(--font-size-base);
+  }
+
+  .text-medium {
+    --font-size-base: 16px;
+    font-size: var(--font-size-base);
+  }
+
+  .text-large {
+    --font-size-base: 18px;
+    font-size: var(--font-size-base);
+  }
+
+  .text-xl {
+    --font-size-base: 20px;
+    font-size: var(--font-size-base);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: var(--font-size-base);
+  }
+
+  p, div, span {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .text-small {
+      --font-size-base: 13px;
+    }
+    
+    .text-medium {
+      --font-size-base: 15px;
+    }
+    
+    .text-large {
+      --font-size-base: 17px;
+    }
+    
+    .text-xl {
+      --font-size-base: 19px;
+    }
+  }
+
+  .reading-mode {
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
+  .reading-mode.text-small {
+    line-height: 1.7;
+  }
+
+  .reading-mode.text-large, .reading-mode.text-xl {
+    line-height: 1.9;
+  }
+
+  .dark .reading-mode {
+    background-color: hsl(var(--background) / 0.8);
+    color: hsl(var(--foreground) / 0.95);
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
